@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>all_attendance</title>
+	<style>
+		td, th{
+			    border: 1px solid;
+			        padding: 4px;
+			            margin: 0 !important;
+    line-height: 1.5;
+		}
+		table {
+  border-collapse: collapse;
+}
+span.present {
+    color: green;
+    font-weight: 600;
+}
+span.absent {
+    color: red;
+    font-weight: 600;
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+	</style>
+</head>
+<body>
+<a href="/employee/"><button>Back</button></a>
+	
+<div align="center">
+	
+
+<h2> All Attendance</h2>
+
+<table class="table" style="max-width: 700px;">
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>Date</th>
+			<th>Attendance</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for data in attendance %}
+			<tr>
+				<td>{{data.employee}}</td>
+				<td>{{data.date}}</td>
+				<td>	
+					{% if data.is_present %}
+						<span class="present">Present</span>
+					{% else %}
+						<span class="absent">Absent</span>
+
+					{% endif %}
+
+				</td>
+			</tr>
+		{% endfor %}	
+	</tbody>
+</table>
+
+</div>
+</body>
+</html>

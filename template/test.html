@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<style type="text/css">
+		button{
+			padding: 10px ;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+<div>
+	<h2 align="center">Employee Attendance</h2>
+</div>
+<div align="center">
+	<a href="{% url 'todays_attendance' %}"><button>Today's Attendance</button></a>
+	<a href="{% url 'all_attendance' %}"><button>All Attendance</button></a>
+</div>
+</body>
+</html>
